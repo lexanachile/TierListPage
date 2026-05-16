@@ -5,62 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tier List Maker</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Библиотека для создания скриншотов -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Tier List Maker</h1>
         
-        <div class="tier-list">
-            <div class="tier-row" data-tier="S">
-                <div class="tier-label s-tier">S</div>
-                <div class="tier-content"></div>
-            </div>
-            <div class="tier-row" data-tier="A">
-                <div class="tier-label a-tier">A</div>
-                <div class="tier-content"></div>
-            </div>
-            <div class="tier-row" data-tier="B">
-                <div class="tier-label b-tier">B</div>
-                <div class="tier-content"></div>
-            </div>
-            <div class="tier-row" data-tier="C">
-                <div class="tier-label c-tier">C</div>
-                <div class="tier-content"></div>
-            </div>
-            <div class="tier-row" data-tier="D">
-                <div class="tier-label d-tier">D</div>
-                <div class="tier-content"></div>
-            </div>
+        <div class="tier-list" id="capture-area">
+            <!-- Тиры будут созданы автоматически из config.js -->
         </div>
 
         <div class="item-bank-container">
             <h2>Items</h2>
             <div class="item-bank" id="item-bank">
-                <!-- Example items. You can add more or allow users to upload -->
-                <div class="draggable-item" draggable="true" id="item-1">
-                    <img src="https://via.placeholder.com/80/FF5733/FFFFFF?text=1" alt="Item 1">
-                </div>
-                <div class="draggable-item" draggable="true" id="item-2">
-                    <img src="https://via.placeholder.com/80/33FF57/FFFFFF?text=2" alt="Item 2">
-                </div>
-                <div class="draggable-item" draggable="true" id="item-3">
-                    <img src="https://via.placeholder.com/80/3357FF/FFFFFF?text=3" alt="Item 3">
-                </div>
-                <div class="draggable-item" draggable="true" id="item-4">
-                    <img src="https://via.placeholder.com/80/F333FF/FFFFFF?text=4" alt="Item 4">
-                </div>
-                <div class="draggable-item" draggable="true" id="item-5">
-                    <img src="https://via.placeholder.com/80/FFFF33/FFFFFF?text=5" alt="Item 5">
-                </div>
+                <!-- Картинки будут загружены автоматически -->
             </div>
         </div>
 
         <div class="controls">
-            <button id="add-item">Add Custom Image URL</button>
-            <button id="reset-list">Reset List</button>
+            <button id="save-image">Save as Image</button>
+            <button id="share-tg">Share to Telegram</button>
+            <button id="reset-list">Reset</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
