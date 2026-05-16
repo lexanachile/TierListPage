@@ -1,0 +1,134 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --row-bg: #2a2a2a;
+    --s-tier: #ff7f7f;
+    --a-tier: #ffbf7f;
+    --b-tier: #ffff7f;
+    --c-tier: #7fff7f;
+    --d-tier: #7fbfff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.tier-row {
+    display: flex;
+    min-height: 100px;
+    background-color: var(--row-bg);
+    border: 1px solid #444;
+}
+
+.tier-label {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.s-tier { background-color: var(--s-tier); }
+.a-tier { background-color: var(--a-tier); }
+.b-tier { background-color: var(--b-tier); }
+.c-tier { background-color: var(--c-tier); }
+.d-tier { background-color: var(--d-tier); }
+
+.tier-content {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.tier-content.drag-over {
+    background-color: #3a3a3a;
+}
+
+.item-bank-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.item-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 100px;
+    padding: 10px;
+    border: 2px dashed #444;
+}
+
+.draggable-item {
+    width: 80px;
+    height: 80px;
+    cursor: grab;
+    transition: transform 0.1s;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+}
+
+.draggable-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    pointer-events: none; /* Prevents image dragging issues */
+}
+
+.draggable-item.dragging {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #666;
+}
